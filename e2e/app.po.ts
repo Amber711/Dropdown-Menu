@@ -16,4 +16,12 @@ export class AppPage {
   getDropdownMenu() {
   	return element(by.css('ul'));
   }
+
+  getMovieItems() {
+  	return element.all(by.css('li'))
+  }
+
+  getClearButton() {
+  	return element(by.css('.clear-movie'))
+  }
 }
