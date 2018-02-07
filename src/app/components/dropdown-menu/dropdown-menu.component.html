@@ -1,0 +1,11 @@
+<div class="select-wrapper">
+
+	<i class="fa fa-caret-up caret" aria-hidden="true"></i>
+	<p class="title">Movie:</p>
+	<input type="text" name="" class="select-dropdown" #inputMovie [value]="movieChosen" (click)="toggleDropdown()" />
+	<ul class="dropdown-menu transition">
+		<li *ngFor="let movie of movies" (click)="chooseMovie(movie)">{{movie}}</li>
+	</ul>
+	<p *ngIf="movieChosen" class="clear-movie" (click)="clearMovie()">clear</p>
+</div>
+

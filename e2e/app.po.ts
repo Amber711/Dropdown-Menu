@@ -6,6 +6,14 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('p')).getText();
+  }
+
+  getInput() {
+  	return element(by.css('input'));
+  }
+
+  getDropdownMenu() {
+  	return element(by.css('ul'));
   }
 }

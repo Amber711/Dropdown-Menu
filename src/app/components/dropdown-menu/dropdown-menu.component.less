@@ -1,0 +1,130 @@
+@selectWidth: 40%;
+@hightlightBorder: #96c8da;
+
+.transition(@property:all;@duration:1s;@function:linear;@delay:0s;) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+.select-wrapper {
+	width: @selectWidth;
+	position: relative;
+	margin: 30px;
+	.caret {
+		position: absolute;
+	    right: 0.7rem;
+    	top: .7rem;
+	    font-size: 1.2rem;
+	    color: rgba(0,0,0,.87);
+	    .transition(@duration: .4s; @function: ease-out);
+	}
+
+	.caret-toggle {
+		transform: rotateZ(180deg);
+	}
+
+	.title {
+	    position: absolute;
+    	top: .7rem;
+    	padding-left: .6rem;
+    	font-weight: 600;
+	}
+
+
+	.select-dropdown {
+		width: 100%;	
+		cursor: pointer;
+	    word-wrap: break-word;
+	    font-size: 1rem;
+	    font-weight: 600;
+	    text-overflow: ellipsis;
+	    line-height: 1rem;
+	    white-space: normal;
+	    outline: 0;
+	    min-height: 2.5rem;
+	    background: #fff;
+	    padding: .25rem .35rem;
+	    color: rgba(0,0,0,.87);
+	    border: 1px solid rgba(34,36,38,.15);
+	    border-radius: .28571429rem;
+	    box-shadow: none;
+	    padding-left: 4rem;
+	    padding-right: 1.6rem;
+
+	   &:hover {
+	   	border-color: rgba(34,36,38,.35);
+	   }
+
+	   &:focus {
+	   	border-color: @hightlightBorder;
+	   }
+	   
+
+	}
+
+	.dropdown-menu {
+	    max-height: 0;
+	    width: 100%;
+	    font-size: 1em;
+	    text-align: left;
+	    background: #fff;
+		overflow-x: hidden;
+    	overflow-y: auto;
+    	padding: 0;
+    	line-height: 1rem;
+    	border-radius: 0 0 .3rem .3rem;
+
+    	li {	
+			height: 2.5rem;
+		    line-height: 1.3rem;
+		    font-size: 1rem;
+		    cursor: pointer;
+		    border: none;
+		    text-align: left;
+		    border-top: 1px solid #fafafa;
+		    padding: .6rem .8rem;
+
+			&:hover {
+				background: rgba(0,0,0,.05);
+    			color: rgba(0,0,0,.95);
+    			color: #000;
+    			font-weight: 400;
+   			 	z-index: 13;
+
+			}
+    	}
+	    
+	}
+
+
+	.dropdown-menu-open {
+			max-height: 9rem;
+	    	border: 1px solid @hightlightBorder;
+	    	border-top: 0;
+		    box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
+		    .transition(@property: border-radius, background, max-height; @duration: .1s, .1s, .4s; @function: linear, linear, linear);
+		    
+	    }
+
+    .input-active {
+    	border-color: @hightlightBorder;
+    	border-bottom: 0;
+	    border-radius: 4px 4px 0 0;
+	    box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
+
+	    &:hover {
+	   	border-color: @hightlightBorder;
+	   }
+    }
+
+    .clear-movie {
+    	float: right;
+    	padding-top: .3rem;
+    	cursor: pointer;
+    }
+
+}
+
